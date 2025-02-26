@@ -2,56 +2,67 @@
   {
     "id": 1,
     "title": "Giới thiệu SQL",
-    "content": "SQL (Structured Query Language) là ngôn ngữ dùng để quản lý và thao tác cơ sở dữ liệu quan hệ. SQL được sử dụng để truy vấn, cập nhật, chèn, xóa và quản lý dữ liệu trong các hệ thống quản lý cơ sở dữ liệu như MySQL, PostgreSQL, SQL Server, Oracle, và SQLite. SQL có thể thực hiện các thao tác trên dữ liệu như SELECT để truy vấn dữ liệu, INSERT để thêm dữ liệu mới, UPDATE để chỉnh sửa dữ liệu hiện có, DELETE để xóa dữ liệu, cũng như các thao tác nâng cao như JOIN, GROUP BY, và INDEX."
+    "content": "SQL (Structured Query Language) là ngôn ngữ dùng để quản lý và thao tác cơ sở dữ liệu quan hệ. SQL được sử dụng để truy vấn, cập nhật, chèn, xóa và quản lý dữ liệu trong các hệ thống quản lý cơ sở dữ liệu như MySQL, PostgreSQL, SQL Server, Oracle, và SQLite. SQL có thể thực hiện các thao tác trên dữ liệu như SELECT để truy vấn dữ liệu, INSERT để thêm dữ liệu mới, UPDATE để chỉnh sửa dữ liệu hiện có, DELETE để xóa dữ liệu, cũng như các thao tác nâng cao như JOIN, GROUP BY, và INDEX.",
+    "example": "SELECT 'Hello, SQL!' AS message;"
   },
   {
     "id": 2,
     "title": "Câu lệnh SELECT",
-    "content": "Câu lệnh SELECT được sử dụng để truy vấn dữ liệu từ một hoặc nhiều bảng. Cú pháp cơ bản: SELECT column1, column2 FROM table_name; Bạn cũng có thể sử dụng các từ khóa như DISTINCT để lọc giá trị trùng lặp, AS để đặt bí danh cho cột hoặc bảng, và điều kiện WHERE để lọc dữ liệu. Ví dụ: SELECT DISTINCT name FROM customers WHERE age > 25 ORDER BY name ASC;"
+    "content": "Câu lệnh SELECT được sử dụng để truy vấn dữ liệu từ một hoặc nhiều bảng. Cú pháp cơ bản: SELECT column1, column2 FROM table_name; Bạn cũng có thể sử dụng các từ khóa như DISTINCT để lọc giá trị trùng lặp, AS để đặt bí danh cho cột hoặc bảng, và điều kiện WHERE để lọc dữ liệu. Ví dụ: SELECT DISTINCT name FROM customers WHERE age > 25 ORDER BY name ASC;",
+    "example": "SELECT name, age FROM customers WHERE age > 25 ORDER BY name ASC;"
   },
   {
     "id": 3,
     "title": "WHERE & ORDER BY",
-    "content": "Mệnh đề WHERE giúp lọc dữ liệu dựa trên điều kiện cụ thể, ví dụ: SELECT * FROM customers WHERE age > 30; ORDER BY được sử dụng để sắp xếp dữ liệu theo thứ tự tăng hoặc giảm, ví dụ: SELECT * FROM customers ORDER BY name ASC; Bạn cũng có thể kết hợp nhiều điều kiện bằng các toán tử logic như AND, OR, NOT. Ví dụ: SELECT * FROM employees WHERE department = 'IT' AND salary > 50000 ORDER BY salary DESC;"
+    "content": "Mệnh đề WHERE giúp lọc dữ liệu dựa trên điều kiện cụ thể, ví dụ: SELECT * FROM customers WHERE age > 30; ORDER BY được sử dụng để sắp xếp dữ liệu theo thứ tự tăng hoặc giảm, ví dụ: SELECT * FROM customers ORDER BY name ASC; Bạn cũng có thể kết hợp nhiều điều kiện bằng các toán tử logic như AND, OR, NOT. Ví dụ: SELECT * FROM employees WHERE department = 'IT' AND salary > 50000 ORDER BY salary DESC;",
+    "example": "SELECT * FROM employees WHERE department = 'IT' AND salary > 50000 ORDER BY salary DESC;"
   },
   {
     "id": 4,
     "title": "GROUP BY & HAVING",
-    "content": "GROUP BY nhóm dữ liệu dựa trên một hoặc nhiều cột, ví dụ: SELECT department, COUNT(*) FROM employees GROUP BY department; HAVING giúp lọc kết quả nhóm, khác với WHERE chỉ áp dụng cho từng dòng dữ liệu, HAVING áp dụng cho nhóm dữ liệu. Ví dụ: SELECT department, COUNT(*) FROM employees GROUP BY department HAVING COUNT(*) > 10;"
+    "content": "GROUP BY nhóm dữ liệu dựa trên một hoặc nhiều cột, ví dụ: SELECT department, COUNT(*) FROM employees GROUP BY department; HAVING giúp lọc kết quả nhóm, khác với WHERE chỉ áp dụng cho từng dòng dữ liệu, HAVING áp dụng cho nhóm dữ liệu. Ví dụ: SELECT department, COUNT(*) FROM employees GROUP BY department HAVING COUNT(*) > 10;",
+    "example": "SELECT department, COUNT(*) FROM employees GROUP BY department HAVING COUNT(*) > 10;"
   },
   {
     "id": 5,
     "title": "JOIN",
-    "content": "JOIN giúp kết hợp dữ liệu từ nhiều bảng. Các loại JOIN phổ biến: INNER JOIN (chỉ lấy các bản ghi khớp nhau ở cả hai bảng), LEFT JOIN (lấy tất cả các bản ghi từ bảng bên trái và các bản ghi phù hợp từ bảng bên phải), RIGHT JOIN, FULL OUTER JOIN. Ví dụ INNER JOIN: SELECT employees.name, departments.name FROM employees INNER JOIN departments ON employees.department_id = departments.id;"
+    "content": "JOIN giúp kết hợp dữ liệu từ nhiều bảng. Các loại JOIN phổ biến: INNER JOIN (chỉ lấy các bản ghi khớp nhau ở cả hai bảng), LEFT JOIN (lấy tất cả các bản ghi từ bảng bên trái và các bản ghi phù hợp từ bảng bên phải), RIGHT JOIN, FULL OUTER JOIN. Ví dụ INNER JOIN: SELECT employees.name, departments.name FROM employees INNER JOIN departments ON employees.department_id = departments.id;",
+    "example": "SELECT employees.name, departments.name FROM employees INNER JOIN departments ON employees.department_id = departments.id;"
   },
   {
     "id": 6,
     "title": "IN",
-    "content": "Mệnh đề IN được sử dụng để lọc dữ liệu khi giá trị nằm trong một tập hợp cụ thể. Thay vì sử dụng nhiều điều kiện OR, bạn có thể dùng IN để rút gọn truy vấn. Ví dụ: SELECT * FROM customers WHERE city IN ('Hanoi', 'Ho Chi Minh', 'Da Nang'); Điều này giúp truy vấn trở nên dễ đọc và hiệu suất tốt hơn so với nhiều điều kiện OR."
+    "content": "Mệnh đề IN được sử dụng để lọc dữ liệu khi giá trị nằm trong một tập hợp cụ thể. Thay vì sử dụng nhiều điều kiện OR, bạn có thể dùng IN để rút gọn truy vấn. Ví dụ: SELECT * FROM customers WHERE city IN ('Hanoi', 'Ho Chi Minh', 'Da Nang'); Điều này giúp truy vấn trở nên dễ đọc và hiệu suất tốt hơn so với nhiều điều kiện OR.",
+    "example": "SELECT * FROM customers WHERE city IN ('Hanoi', 'Ho Chi Minh', 'Da Nang');"
   },
   {
     "id": 7,
     "title": "INSERT, UPDATE, DELETE",
-    "content": "INSERT thêm dữ liệu: INSERT INTO table_name (column1, column2) VALUES (value1, value2); UPDATE cập nhật dữ liệu: UPDATE table_name SET column1 = value1 WHERE condition; DELETE xóa dữ liệu: DELETE FROM table_name WHERE condition; Hãy luôn sử dụng WHERE trong UPDATE và DELETE để tránh thao tác lên toàn bộ dữ liệu của bảng."
+    "content": "INSERT thêm dữ liệu: INSERT INTO table_name (column1, column2) VALUES (value1, value2); UPDATE cập nhật dữ liệu: UPDATE table_name SET column1 = value1 WHERE condition; DELETE xóa dữ liệu: DELETE FROM table_name WHERE condition; Hãy luôn sử dụng WHERE trong UPDATE và DELETE để tránh thao tác lên toàn bộ dữ liệu của bảng.",
+    "example": "INSERT INTO employees (name, department) VALUES ('Alice', 'HR');"
   },
   {
     "id": 8,
     "title": "Subquery & CTE",
-    "content": "Subquery (truy vấn lồng) là một truy vấn bên trong một truy vấn khác, thường dùng trong mệnh đề WHERE, FROM, hoặc SELECT. Ví dụ: SELECT name FROM employees WHERE department_id = (SELECT id FROM departments WHERE name = 'HR'); CTE (Common Table Expression) giúp tạo truy vấn dễ đọc hơn, ví dụ: WITH DeptCount AS (SELECT department, COUNT(*) as total FROM employees GROUP BY department) SELECT * FROM DeptCount WHERE total > 5;"
+    "content": "Subquery (truy vấn lồng) là một truy vấn bên trong một truy vấn khác, thường dùng trong mệnh đề WHERE, FROM, hoặc SELECT. Ví dụ: SELECT name FROM employees WHERE department_id = (SELECT id FROM departments WHERE name = 'HR'); CTE (Common Table Expression) giúp tạo truy vấn dễ đọc hơn, ví dụ: WITH DeptCount AS (SELECT department, COUNT(*) as total FROM employees GROUP BY department) SELECT * FROM DeptCount WHERE total > 5;",
+    "example": "SELECT name FROM employees WHERE department_id = (SELECT id FROM departments WHERE name = 'HR');"
   },
   {
     "id": 9,
     "title": "Stored Procedure & Function",
-    "content": "Stored Procedure là tập hợp các câu lệnh SQL được lưu trữ và thực thi nhiều lần: CREATE PROCEDURE GetEmployees() BEGIN SELECT * FROM employees; END; Function tương tự nhưng trả về một giá trị cụ thể: CREATE FUNCTION GetEmployeeCount() RETURNS INT BEGIN RETURN (SELECT COUNT(*) FROM employees); END; Stored Procedures giúp tối ưu hóa hiệu suất và bảo mật khi thao tác trên dữ liệu lớn."
+    "content": "Stored Procedure là tập hợp các câu lệnh SQL được lưu trữ và thực thi nhiều lần: CREATE PROCEDURE GetEmployees() BEGIN SELECT * FROM employees; END; Function tương tự nhưng trả về một giá trị cụ thể: CREATE FUNCTION GetEmployeeCount() RETURNS INT BEGIN RETURN (SELECT COUNT(*) FROM employees); END; Stored Procedures giúp tối ưu hóa hiệu suất và bảo mật khi thao tác trên dữ liệu lớn.",
+    "example": "CREATE PROCEDURE GetEmployees() BEGIN SELECT * FROM employees; END;"
   },
   {
     "id": 10,
     "title": "Trigger",
-    "content": "Trigger là thủ tục tự động thực thi khi có sự kiện như INSERT, UPDATE, DELETE xảy ra trên bảng. Ví dụ: CREATE TRIGGER after_insert_employee AFTER INSERT ON employees FOR EACH ROW BEGIN INSERT INTO logs (description) VALUES ('New employee added'); END; Triggers giúp tự động hóa các quy trình nhưng cần sử dụng cẩn thận để tránh ảnh hưởng đến hiệu suất hệ thống."
+    "content": "Trigger là thủ tục tự động thực thi khi có sự kiện như INSERT, UPDATE, DELETE xảy ra trên bảng. Ví dụ: CREATE TRIGGER after_insert_employee AFTER INSERT ON employees FOR EACH ROW BEGIN INSERT INTO logs (description) VALUES ('New employee added'); END; Triggers giúp tự động hóa các quy trình nhưng cần sử dụng cẩn thận để tránh ảnh hưởng đến hiệu suất hệ thống.",
+    "example": "CREATE TRIGGER after_insert_employee AFTER INSERT ON employees FOR EACH ROW BEGIN INSERT INTO logs (description) VALUES ('New employee added'); END;"
   },
   {
     "id": 11,
     "title": "Index & Performance Tuning",
-    "content": "Index giúp tăng tốc truy vấn bằng cách tạo các chỉ mục trên cột. Ví dụ: CREATE INDEX idx_employee_name ON employees(name); Ngoài ra, việc tối ưu truy vấn bằng EXPLAIN để phân tích kế hoạch thực thi, sử dụng cache, và tránh SELECT * cũng giúp cải thiện hiệu suất. Khi sử dụng Index, cần chú ý đến chi phí lưu trữ và hiệu quả khi cập nhật dữ liệu."
+    "content": "Index giúp tăng tốc truy vấn bằng cách tạo các chỉ mục trên cột. Ví dụ: CREATE INDEX idx_employee_name ON employees(name); Ngoài ra, việc tối ưu truy vấn bằng EXPLAIN để phân tích kế hoạch thực thi, sử dụng cache, và tránh SELECT * cũng giúp cải thiện hiệu suất. Khi sử dụng Index, cần chú ý đến chi phí lưu trữ và hiệu quả khi cập nhật dữ liệu.",
+    "example": "CREATE INDEX idx_employee_name ON employees(name);"
   }
 ]

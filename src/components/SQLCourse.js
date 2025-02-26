@@ -79,6 +79,17 @@ const SQLCourse = () => {
           </Modal.Header>
           <Modal.Body>
             <p>{selectedLesson.content}</p>
+            {selectedLesson.example && (
+              <pre
+                style={{
+                  backgroundColor: "#f8f9fa",
+                  padding: "10px",
+                  borderRadius: "5px",
+                }}
+              >
+                {selectedLesson.example}
+              </pre>
+            )}
           </Modal.Body>
           <Modal.Footer>
             <Button
